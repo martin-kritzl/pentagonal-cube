@@ -12,3 +12,9 @@ Stages 21-24:	Kantenstücke auf Unterseite in die korrekte Orientierung bringen
 Stages 25-27:	Kantenstücke der unteren Ebene in die korrekte Position bringen
 				(Seiten haben zwei Reihen korrekt und untere Kantenstück)
 Stage     28:	Eckstücke der unteren Eben in korrekte Position bringen
+
+Prolog:
+https://www.amzi.com/articles/rubik.htm
+
+Rubik's Cube lösen:
+http://jeays.net/rubiks.htm
