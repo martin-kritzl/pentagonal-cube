@@ -1,19 +1,28 @@
 # Vorne
-U: Up/Oben
-F: Front/Vorne
+01 --> U: Up/Oben
+02 --> F: Front/Vorne
 
-L: Left/Links
-R: Right/Rechts
+03 --> L: Left/Links
+04 --> R: Right/Rechts
 
-FLD: Front left down/Vorne Links unten
-FRD: Front right down/Vorne Rechts unten
+05 --> FLD: Front left down/Vorne Links unten
+06 --> FRD: Front right down/Vorne Rechts unten
 
 # Hinten:
-D: Down/Unten
-B: Back/Hinten
+07 --> D: Down/Unten
+08 --> B: Back/Hinten
 
-BLD: Back left down/Hinten links unten
-BRD: Back right down/Hinten rechts unten
+09 --> BLD: Back left down/Hinten links unten
+10 --> BRD: Back right down/Hinten rechts unten
 
-BLU: Back left up/Hinten links oben
-BRU: Back right up/Hinten rechts oben
+11 --> BLU: Back left up/Hinten links oben
+12 --> BRU: Back right up/Hinten rechts oben
+
+Benötigte Schichtbewegungen:
+- U
+- L
+- F
+- R
+
+Benötigte Drehungen (https://ruwix.com/twisty-puzzles/megaminx-gigaminx-teraminx-petaminx/):
+- Obere Fläche nach unten (U -> D), Fläche L und F jetzt vorne (L -> FRD, F -> FLD), Schritt 0 zu Schritt 3
