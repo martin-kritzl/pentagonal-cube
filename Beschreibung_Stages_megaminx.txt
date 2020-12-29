@@ -1,0 +1,19 @@
+# Vorne
+U: Up/Oben
+F: Front/Vorne
+
+L: Left/Links
+R: Right/Rechts
+
+FLD: Front left down/Vorne Links unten
+FRD: Front right down/Vorne Rechts unten
+
+# Hinten:
+D: Down/Unten
+B: Back/Hinten
+
+BLD: Back left down/Hinten links unten
+BRD: Back right down/Hinten rechts unten
+
+BLU: Back left up/Hinten links oben
+BRU: Back right up/Hinten rechts oben

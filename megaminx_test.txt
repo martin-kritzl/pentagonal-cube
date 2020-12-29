@@ -1,0 +1,4 @@
+solve(X,cube('F','R','U','B','B','L','U','L','R','B','D','U','U','L','B','D','L','L','L','R','D','U','F','B','F','R','B','B','L','U','R','R','D','L','U','R','R','D','F','F','U','F','R','U','L','B','D','F','F','D','B','D','F','D')).
+
+give the answer:
+X = [+d, +d, +r, -f, -f, -d, +r, +r, +f, +t, +r, +r, -t, +d, +f, -t, -f, +t, -f, +f, -r, +f, +r, -f, +r, +t, +r, -d, -r, -f, -d, +f, -t, +r, +d, +f, +d, +d, -f, -r, -t, -f, -r, +d, +r, +d, +f, +t, +u, +u, +t, +t, +sp1, -d, +sp1, +t, -sp1, -d, +sp1, +t, -sp1, -d, +sp1, +t, +d, +sp1, +t, +sp5, -t, +t, +sp4, -t, +sp7, +sp7, +sp8, +sp6, +sp8, +sp6, +sp12, +sp9, +sp12] 
