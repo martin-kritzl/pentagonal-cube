@@ -41,4 +41,7 @@ Stages:
 7:  Eckstücke der 3. Ebene (Spitzen der unteren Seiten) in richtige Position und Orientierung bringen
 8:  Kantenstücke der 3. Ebene in richtige Position und Orientierung bringen (wie bei 4)
 9:  Stern auf der Oberseite machen (wie bei 1)
-10: 
+10: Kantenstücke auf die richtige Position bringen (3 Stücke rotieren)
+11: Eckstücke auf die richtige Position bringen (Orientierung egal, 3 Stücke rotieren)
+12: Eckstücke der Oberseite in richtige Orientierung bringen
+-> Fertig
