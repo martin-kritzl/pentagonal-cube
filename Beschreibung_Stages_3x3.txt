@@ -1,0 +1,14 @@
+(richtige Orientierung und richtige Position zu den Farben der Mittelstücke)
+
+Stages   1-4:	Kantenstücke der oberen Ebene in die korrekte Position bringen
+				(Oberseite hat Kreuz und Seiten haben zwei Steine korrekt, Mittelstück und Stück darüber)
+Stages   5-8:	Eckstücke der oberen Ebene in die korrekte Position bringen
+				(Oberseite eine einzelne Farbe, obere Reihe korrekt und Mittelstück)
+Stage      9:	Oberen Ring so drehen, dass auf den Seiten ein kleines T entsteht
+Stages 10-20:	Kantenstücke der mittleren Ebene in die korrekte Position bringen
+				(Seiten haben zwei obere Reihen korrekt)
+Stages 21-24:	Kantenstücke auf Unterseite in die korrekte Orientierung bringen
+				(Kreuz aus einer Farbe auf der Unterseite, Seiten müssen noch nicht passen)
+Stages 25-27:	Kantenstücke der unteren Ebene in die korrekte Position bringen
+				(Seiten haben zwei Reihen korrekt und untere Kantenstück)
+Stage     28:	Eckstücke der unteren Eben in korrekte Position bringen
