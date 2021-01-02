@@ -246,71 +246,39 @@ mov(v,
 % some special "moves" that are mapped to longer move sequences
 % --------------------------------------------------------------
 %F2L
-mov(sp111,X,Y) :-
+mov(sp1,X,Y) :-
     move_sequence([+u, +r, -u, -r, -u, -f, +u, +f], X, Y).
-mov(sp112,X,Y) :-
+mov(sp2,X,Y) :-
     move_sequence([-u, -l, +u, +l, +u, +f, -u, -f], X, Y).
 
 %Third layer edges and corners
-mov(sp113,X,Y) :-
+mov(sp3,X,Y) :-
     move_sequence([-f, -r, -f, -f, +r, +f], X, Y).
-mov(sp114,X,Y) :-
+mov(sp4,X,Y) :-
     move_sequence([+f, +l, +f, +f, -l, -f], X, Y).
 
 %Top star
-mov(sp115,X,Y) :-
+mov(sp5,X,Y) :-
     move_sequence([+f, +u, +r, -u, -r, -f], X, Y).
-mov(sp116,X,Y) :-
+mov(sp6,X,Y) :-
     move_sequence([+f, +r, +u, -r, -u, -f], X, Y).
 
 %Cycle edges
-mov(sp117,X,Y) :-
+mov(sp7,X,Y) :-
     move_sequence([+r, +u, -r, +u, +r, +u, +u, +u, -r, +u], X, Y).
-mov(sp118,X,Y) :-
+mov(sp8,X,Y) :-
     move_sequence([-u, +r, +u, +u, -r, -u, +r, -u, -r], X, Y).
 
 %Cycle corners
-mov(sp119,X,Y) :-
+mov(sp9,X,Y) :-
     move_sequence([-l, +u, +u, +r, -u, -u, +l, +u, +u, -r, -u, -u], X, Y).
-mov(sp120,X,Y) :-
+mov(sp10,X,Y) :-
     move_sequence([+r, -u, -u, -l, +u, +u, -r, -u, -u, +l, +u, +u], X, Y).  
 
 %Orient corners
-mov(sp121,X,Y) :-
+mov(sp11,X,Y) :-
     move_sequence([-r, -d, +r, +d], X, Y).  
 
-
-
-
-
-mov(sp1,X,Y) :-
-    move_sequence([-f, +d, +f, -d, -l, -d, +l], X, Y).
-mov(sp2,X,Y) :-
-    move_sequence([+f, -d, -f, +d, -r, +d, +r], X, Y).
-mov(sp3,X,Y) :-
-    move_sequence([-b, +r, -d, -r, +d, +b], X, Y).
-mov(sp4,X,Y) :-
-    move_sequence([-b, -d, +r, +d, -r, +b], X, Y).
-mov(sp5,X,Y) :-
-    move_sequence([-b, +r, -d, -r, +d, +b, +f, -d, -l, +d, +l, -f], X, Y).
-mov(sp6,X,Y) :-
-    move_sequence([-l, -l, -u, -d, -d, +l, +r, +f, +f, -l, -r, +u, -l, -l], X, Y).
-mov(sp7,X,Y) :-
-    move_sequence([-l, -l, -u, +l, +r, +f, +f, -l, -r, -d, -d, +u, -l, -l], X, Y).
-mov(sp8,X,Y) :-
-    move_sequence([-l, -l, +u, +u, -b, -b, +u, +r, +r, +f, +f, +r, +r, +f, +f, +r, +r, +f, +f, -u, -b, -b, +u, +u, -l, -l], X, Y).
-mov(sp9,X,Y) :-
-    move_sequence([-r, -d, -l, +d, +r, -d, +l, +d], X, Y).
-mov(sp10,X,Y) :-
-    move_sequence([-d, -l, +d, -r, -d, +l, +d, +r], X, Y).
-mov(sp11,X,Y) :-
-    move_sequence([+l, -b, -b, +f, -l, -f, +l, +f, -l, -f, +l, +f, -l, -f, +l, -b, -b, -l], X, Y).
-mov(sp12,X,Y) :-
-    move_sequence([-b, +r, -d, -r, +d, +r, -d, -r, +d, +r, -d, -r, +d, +b], X, Y).
-mov(sp13,X,Y) :-
-    move_sequence([+f, +u, -f, -u, +f, +u, -f, -u], X, Y).
-mov(sp14,X,Y) :-
-    move_sequence([+u, +f, -u, -f, +u, +f, -u, -f], X, Y).
 % --------------------------------------------------------------
 % these helpers call the actual rotations
 % --------------------------------------------------------------
