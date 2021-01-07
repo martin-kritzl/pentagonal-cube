@@ -36,7 +36,7 @@ mov(f,
 
 % rotate "right" slice
 mov(r,
-    (
+    cube(
         U1,U2,U3,U4,U5,U6,U7,U8,U9,U10,U11, % Up
         F1,F2,F3,F4,F5,F6,F7,F8,F9,F10,F11, % Front
         L1,L2,L3,L4,L5,L6,L7,L8,L9,L10,L11, % Left
@@ -88,7 +88,7 @@ mov(l,
     ),
     cube(
         U1,BLU6,BLU7,BLU8,U5,U6,U7,U8,U9,U10,U11, % Up
-        F1,F2,F3,F4,F5,F6,F7,U1,U2,U3,F11, % Front
+        F1,F2,F3,F4,F5,F6,F7,U2,U3,U4,F11, % Front
         L9,L10,L1,L2,L3,L4,L5,L6,L7,L8,L11, % Left
         R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11, % Right
         FLD1,FLD2,FLD3,FLD4,FLD5,FLD6,FLD7,F8,F9,F10,FLD11, % Front left down
@@ -638,6 +638,8 @@ get_goal(28, cube(
 % the search space is narrowed by listing all allowed rotations
 % for each stage separately
 % --------------------------------------------------------------
+% eigentlich ist es cand (für candiadate), dann stimmt es auch mit dem pdf überein
+% TODO: define candidates for moves (adapt to megaminx)
 and(1, [r, d, f, t]).
 and(2, [r, d, f, t]).
 and(3, [r, d, f, t]).
