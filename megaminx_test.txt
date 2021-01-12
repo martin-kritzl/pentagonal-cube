@@ -2,3 +2,27 @@ solve(X,cube('F','R','U','B','B','L','U','L','R','B','D','U','U','L','B','D','L'
 
 give the answer:
 X = [+d, +d, +r, -f, -f, -d, +r, +r, +f, +t, +r, +r, -t, +d, +f, -t, -f, +t, -f, +f, -r, +f, +r, -f, +r, +t, +r, -d, -r, -f, -d, +f, -t, +r, +d, +f, +d, +d, -f, -r, -t, -f, -r, +d, +r, +d, +f, +t, +u, +u, +t, +t, +sp1, -d, +sp1, +t, -sp1, -d, +sp1, +t, -sp1, -d, +sp1, +t, +d, +sp1, +t, +sp5, -t, +t, +sp4, -t, +sp7, +sp7, +sp8, +sp6, +sp8, +sp6, +sp12, +sp9, +sp12] 
+
+Test move command:
+mov(u,cube(weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,
+dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,
+violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,
+rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,
+hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,
+braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,
+grau,grau,grau,grau,grau,grau,grau,grau,grau,grau,grau,
+hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,
+orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,
+rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,
+gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,
+dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau),Solution).
+
+Up slice rotated:
+cube(weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, rot, rot, dgruen, dgruen, dgruen, dgruen, dgruen, dgruen, dgruen, rot, dgruen, violett, violett, violett, violett, violett, violett, violett, dgruen, dgruen, dgruen, violett, rot, dblau, dblau, dblau, rot, rot, rot, rot, rot, rot, rot, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, braun, braun, braun, braun, braun, braun, braun, braun, braun, braun, braun, grau, grau, grau, grau, grau, grau, grau, grau, grau, grau, grau, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, orange, orange, orange, orange, orange, orange, orange, orange, orange, orange, orange, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, gelb, gelb, gelb, violett, violett, violett, gelb, gelb, gelb, gelb, gelb, dblau, dblau, dblau, dblau, dblau, gelb, gelb, gelb, dblau, dblau, dblau)
+
+solve(Movelist,cube(weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, rot, rot, dgruen, dgruen, dgruen, dgruen, dgruen, dgruen, dgruen, rot, dgruen, violett, violett, violett, violett, violett, violett, violett, dgruen, dgruen, dgruen, violett, rot, dblau, dblau, dblau, rot, rot, rot, rot, rot, rot, rot, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, braun, braun, braun, braun, braun, braun, braun, braun, braun, braun, braun, grau, grau, grau, grau, grau, grau, grau, grau, grau, grau, grau, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, orange, orange, orange, orange, orange, orange, orange, orange, orange, orange, orange, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, gelb, gelb, gelb, violett, violett, violett, gelb, gelb, gelb, gelb, gelb, dblau, dblau, dblau, dblau, dblau, gelb, gelb, gelb, dblau, dblau, dblau)).
+
+Testing:
+
+cube(weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,rot,rot,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,rot,dgruen,violett,violett,violett,violett,violett,violett,violett,dgruen,dgruen,dgruen,violett,rot,dblau,dblau,dblau,rot,rot,rot,rot,rot,rot,rot,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,grau,grau,grau,grau,grau,grau,grau,grau,grau,grau,grau,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,gelb,gelb,gelb,violett,violett,violett,gelb,gelb,gelb,gelb,gelb,dblau,dblau,dblau,dblau,dblau,gelb,gelb,gelb,dblau,dblau,dblau)
+cube(weiss,    A,weiss,    B,weiss,    C,weiss,    D,weiss,    E,weiss,dgruen,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,violett,X,Y,Z,A1,rot,B1,C1,D1,E1,F1,G1,H1,I1,J1,K1,L1,M1,N1,O1,P1,Q1,R1,S1,T1,U1,V1,W1,X1,Y1,Z1,A2,B2,C2,D2,E2,F2,G2,H2,I2,J2,K2,L2,M2,N2,O2,P2,Q2,R2,S2,T2,U2,V2,W2,X2,Y2,Z2,A3,B3,C3,D3,E3,F3,G3,H3,I3,J3,K3,L3,M3,N3,O3,P3,Q3,R3,S3,T3,U3,V3,W3,X3,Y3,Z3,A4,gelb,B4,C4,D4,E4,F4,G4,H4,I4,J4,K4,L4,M4,dblau,N4,O4,P4,Q4)
