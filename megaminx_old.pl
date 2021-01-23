@@ -712,7 +712,7 @@ get_move(Stage, -Move, State, Stagegoal) :-
 get_stage(Stage, Newstage) :-
     Newstage is Stage + 1.
 % the cube should be finished after stage 28, so we stop here.
-stage([],1,_).
+stage([],2,_).
 % this builds the result move list by moving from stage to stage
 % and joining the solutions gathered for each stage
 stage(Movelist,Currentstage,Cubestate) :-
