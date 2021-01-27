@@ -536,42 +536,26 @@ get_goal(11, cube(
 % --------------------------------------------------------------
 % eigentlich ist es cand (für candiadate), dann stimmt es auch mit dem pdf überein
 % TODO: define candidates for moves (adapt to megaminx)
-and(1, [f, r, l, u, rd, ld, t, v]).
-and(2, [r, d, f, t]).
-and(3, [r, d, f, t]).
-and(4, [r, d, f, t]).
-and(5, [f, r, d, t]).
-and(6, [r, d, f, t]).
-and(7, [r, d, f, t]).
-and(8, [r, d, f, t]).
-and(9, [u, t]).
-and(10, [f, d, r, sp1, sp2]).
-and(11, [sp1, sp2]).
-and(12, [t]).
-and(13, [f, d, r, sp1, sp2]).
-and(14, [sp1,sp2]).
-and(15, [t]).
-and(16, [f, d, r, sp1, sp2]).
-and(17, [sp1,sp2]).
-and(18, [t]).
-and(19, [f, d, r, sp1, sp2]).
-and(20, [sp1,sp2]).
-and(21, [t, sp3, sp4, sp5]).
-and(22, [t, sp3, sp4, sp5]).
-and(23, [t, sp3, sp4, sp5]).
-and(24, [t, sp3, sp4, sp5]).
-and(25, [t, u, sp6, sp7, sp8]).
-and(26, [t, u, sp6, sp7, sp8]).
-and(27, [t, u, sp6, sp7, sp8]).
-and(28, [t, u, sp9, sp10, sp11, sp12, sp13, sp14]).
+cand(1, [f, r, l, u, rd, ld, v]).
+cand(2, [f, r, l, u, rd, ld, v]).
+cand(3, [t]).
+cand(4, [f, r, l, u, rd, ld, v, sp1, sp2]).
+cand(5, [f, r, l, u, rd, ld, v]).
+cand(6, [f, r, l, u, rd, ld, v, sp3, sp4]).
+cand(7, [f, r, l, u, rd, ld, v]).
+cand(8, [f, r, l, u, rd, ld, v, sp1, sp2]).
+cand(9, [f, r, l, u, rd, ld, v, sp5, sp6]).
+cand(10, [f, r, l, u, rd, ld, v, sp7, sp8]).
+cand(11, [f, r, l, u, rd, ld, v, sp9, sp10, sp11]).
+
 % catch a candidate move from the list for each stage
 get_candidate(Stage, Move) :-
-    and(Stage, Movelist),
+    cand(Stage, Movelist),
     nth1(_,Movelist,Move).
 % nht1 gibt true zurück, wenn move dass _ Element von move List ist
 % --------------------------------------------------------------
 % these helpers reject some unwise move candidates
-% check whether the proposed move should be tried or not
+% check whether the proposed move should be tried or notü
 % --------------------------------------------------------------
 % first, if this move is negation of previous move, we reject it
 conflict([+Previous|_], -This) :- This=Previous.
@@ -608,7 +592,7 @@ get_move(Stage, -Move, State, Stagegoal) :-
 get_stage(Stage, Newstage) :-
     Newstage is Stage + 1.
 % the cube should be finished after stage 28, so we stop here.
-stage([],4,_).
+stage([],12,_).
 % this builds the result move list by moving from stage to stage
 % and joining the solutions gathered for each stage
 stage(Movelist,Currentstage,Cubestate) :-
