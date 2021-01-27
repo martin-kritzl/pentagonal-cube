@@ -342,6 +342,8 @@ move_sequence([Move|Othermoves], X, Z) :-
 %
 % here are the cube goal states for each stage
 % ----------------------------------------------------------------------
+
+% White star
 get_goal(1, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
@@ -358,7 +360,7 @@ get_goal(1, cube(
      _ , _ , _ , _ , _ , _ ,dblau, _ , _ , _ , _ ) % Back right up / dunkel blau
     ).
 
-% White star
+% White complete
 get_goal(2, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Up / weiss
@@ -409,231 +411,125 @@ get_goal(4, cube(
      _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / hellgruen
     ).
 
-
-get_goal(1, cube(
-    _,dgruen,_,_,_,_,_,_,_,
-    _,_,_,_,_,_,_,_,_,
-    _,_,_,_,_,_,_,_,_,
-    _,_,_,_,_,_,_,_,_,
-    _,_,_,_,_,_,_,weiss,_,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(2, cube(
-    _,dgruen,_,_,_,_,_,_,_,
-    _,rot,_,_,_,_,_,_,_,
-    _,_,_,_,_,_,_,_,_,
-    _,_,_,_,_,_,_,_,_,
-    _,_,_,_,_,weiss,_,weiss,_,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(3, cube(
-    _,dgruen,_,_,_,_,_,_,_,
-    _,rot,_,_,_,_,_,_,_,
-    _,'B',_,_,_,_,_,_,_,
-    _,_,_,_,_,_,_,_,_,
-    _,weiss,_,_,_,weiss,_,weiss,_,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(4, cube(
-    _,dgruen,_,_,_,_,_,_,_,
-    _,rot,_,_,_,_,_,_,_,
-    _,'B',_,_,_,_,_,_,_,
-    _,violett,_,_,_,_,_,_,_,
-    _,weiss,_,weiss,_,weiss,_,weiss,_,
-    _,_,_,_,_,_,_,_,_)
-    ).
+% corner pieces 2nd layer
 get_goal(5, cube(
-    dgruen,dgruen,_,_,_,_,_,_,_,
-    _,rot,_,_,_,_,_,_,_,
-    _,'B',_,_,_,_,_,_,_,
-    _,violett,violett,_,_,_,_,_,_,
-    _,weiss,_,weiss,_,weiss,weiss,weiss,_,
-    _,_,_,_,_,_,_,_,_)
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Up / grau
+     _ , _ , _ , _ , _ ,hblau, _ , _ , _ , _ , _ , % Front / hellblau
+     _ , _ , _ ,braun, _ , _ , _ , _ , _ , _ , _ , % Left / braun
+     _ , _ , _ , _ , _ , _ , _ ,orange, _ , _ , _ , % Right / orange
+     _ ,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , _ , % Front left down / dunkelgruen
+     _ , _ , _ ,violett,violett,violett,violett,violett,violett,violett, _ , % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau, _ , _ , _ ,dblau,dblau,dblau, _ , % Back / dunkelblau
+     rot,rot, _ , _ , _ ,rot,rot,rot,rot,rot, _ , % Back left down / rot
+     gelb,gelb,gelb,gelb,gelb,gelb, _ , _ , _ ,gelb, _ , % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, _ , % Back left up / rosa
+     _ ,hgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / hellgruen
     ).
+
+% edge pieces 3rd layer
 get_goal(6, cube(
-    dgruen,dgruen,dgruen,_,_,_,_,_,_,
-    rot,rot,_,_,_,_,_,_,_,
-    _,'B',_,_,_,_,_,_,_,
-    _,violett,violett,_,_,_,_,_,_,
-    _,weiss,_,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Up / grau
+     _ , _ , _ , _ ,hblau,hblau,hblau, _ , _ , _ , _ , % Front / hellblau
+     _ , _ ,braun,braun,braun, _ , _ , _ , _ , _ , _ , % Left / braun
+     _ , _ , _ , _ , _ , _ ,orange,orange,orange, _ , _ , % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , % Front left down / dunkelgruen
+    violett, _ ,violett,violett,violett,violett,violett,violett,violett,violett, _ , % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau, _ ,dblau,dblau,dblau,dblau, _ , % Back / dunkelblau
+    rot,rot,rot, _ ,rot,rot,rot,rot,rot,rot, _ , % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb, _ ,gelb,gelb, _ , % Back right down / gelb
+    rosa, _ , _ , _ , _ , _ , _ , _ ,rosa,rosa, _ , % Back left up / rosa
+    hgruen,hgruen,hgruen, _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / hellgruen
     ).
+
+% corner pieces 3rd layer (Eckstück das nach vorn zeigt)
 get_goal(7, cube(
-    dgruen,dgruen,dgruen,_,_,_,_,_,_,
-    rot,rot,rot,_,_,_,_,_,_,
-    'B','B',_,_,_,_,_,_,_,
-    _,violett,violett,_,_,_,_,_,_,
-    _,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ ,hblau,hblau,hblau,hblau,hblau, _ , _ ,hblau, % Front / hellblau
+     _ ,braun,braun,braun,braun,braun, _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ ,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa, _ , _ , _ , _ , _ ,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen, _ , _ , _ , _ , _ ,hgruen,hgruen) % Back right up / hellgruen
     ).
+
+% edge pieces 4th layer
 get_goal(8, cube(
-    dgruen,dgruen,dgruen,_,_,_,_,_,_,
-    rot,rot,rot,_,_,_,_,_,_,
-    'B','B','B',_,_,_,_,_,_,
-    violett,violett,violett,_,_,_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau, _ ,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun, _ , _ , _ ,braun, % Left / braun
+    orange, _ , _ , _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ , _ , _ ,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ , _ , _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
     ).
+
+% topstar in position
 get_goal(9, cube(
-    dgruen,dgruen,dgruen,_,dgruen,_,_,_,_,
-    rot,rot,rot,_,_,_,_,_,_,
-    'B','B','B',_,_,_,_,_,_,
-    violett,violett,violett,_,_,_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, % Up / grau
+     _ , _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau, _ ,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun, _ , _ , _ ,braun, % Left / braun
+    orange, _ , _ , _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ , _ , _ ,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ , _ , _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
     ).
+
+% topstar edge pieces
 get_goal(10, cube(
-    dgruen,dgruen,dgruen,_,dgruen,_,_,_,_,
-    rot,rot,rot,_,_,_,_,_,_,
-    'B','B','B',_,_,_,_,violett,_,
-    violett,violett,violett,_,_,_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,dgruen,_)
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, % Up / grau
+    hblau, _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau, _ ,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun, _ ,braun, _ ,braun, % Left / braun
+    orange, _ ,orange, _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ ,rosa, _ ,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ ,hgruen, _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
     ).
+
+% corner pieces toplayer
 get_goal(11, cube(
-    dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,_,
-    rot,rot,rot,_,_,_,_,_,_,
-    'B','B','B',_,_,_,_,_,_,
-    violett,violett,violett,_,_,violett,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau,grau,grau,grau,grau,grau,grau,grau,grau,grau,grau, % Up / grau
+    hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun, % Left / braun
+    orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen) % Back right up / hellgruen
     ).
-get_goal(12, cube(
-    rot,rot,rot,_,rot,_,_,_,_,
-    'B','B','B',_,_,_,_,_,_,
-    violett,violett,violett,_,_,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(13, cube(
-    rot,rot,rot,_,rot,_,_,_,_,
-    'B','B','B',_,_,_,_,_,_,
-    violett,violett,violett,_,_,violett,_,dgruen,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,rot,_)
-    ).
-get_goal(14, cube(
-    rot,rot,rot,rot,rot,_,_,_,_,
-    'B','B','B',_,_,_,_,_,_,
-    violett,violett,violett,_,_,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(15, cube(
-    'B','B','B',_,'B',_,_,_,_,
-    violett,violett,violett,_,_,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(16, cube(
-    'B','B','B',_,'B',_,_,_,_,
-    violett,violett,violett,_,_,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,rot,_,
-    rot,rot,rot,rot,rot,_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,'B',_)
-    ).
-get_goal(17, cube(
-    'B','B','B','B','B',_,_,_,_,
-    violett,violett,violett,_,_,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(18, cube(
-    violett,violett,violett,_,violett,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B',_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(19, cube(
-    violett,violett,violett,_,violett,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,'B',_,
-    'B','B','B','B','B',_,_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,violett,_)
-    ).
-get_goal(20, cube(
-    violett,violett,violett,violett,violett,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B','B',_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,_,_,_,_,_,_,_,_)
-    ).
-get_goal(21, cube(
-    violett,violett,violett,violett,violett,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B','B',_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,'D',_,_,_,_,_,_,_)
-    ).
-get_goal(22, cube(
-    violett,violett,violett,violett,violett,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B','B',_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,'D',_,'D',_,_,_,_,_)
-    ).
-get_goal(23, cube(
-    violett,violett,violett,violett,violett,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B','B',_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,'D',_,'D',_,'D',_,_,_)
-    ).
-get_goal(24, cube(
-    violett,violett,violett,violett,violett,violett,_,_,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B','B',_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,'D',_,'D',_,'D',_,'D',_)
-    ).
-get_goal(25, cube(
-    violett,violett,violett,violett,violett,violett,_,violett,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,_,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B','B',_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,'D',_,'D',_,'D',_,'D',_)
-    ).
-get_goal(26, cube(
-    violett,violett,violett,violett,violett,violett,_,violett,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,dgruen,_,
-    rot,rot,rot,rot,rot,rot,_,_,_,
-    'B','B','B','B','B','B',_,_,_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,'D',_,'D',_,'D',_,'D',_)
-    ).
-get_goal(27, cube(
-    violett,violett,violett,violett,violett,violett,_,violett,_,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,_,dgruen,_,
-    rot,rot,rot,rot,rot,rot,_,rot,_,
-    'B','B','B','B','B','B',_,'B',_,
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    _,'D',_,'D',_,'D',_,'D',_)
-    ).
-get_goal(28, cube(
-    violett,violett,violett,violett,violett,violett,violett,violett,violett,
-    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,
-    rot,rot,rot,rot,rot,rot,rot,rot,rot,
-    'B','B','B','B','B','B','B','B','B',
-    weiss,weiss,weiss,weiss,_,weiss,weiss,weiss,weiss,
-    'D','D','D','D','D','D','D','D','D')
-    ).
+
 % --------------------------------------------------------------
 % the search space is narrowed by listing all allowed rotations
 % for each stage separately
@@ -712,7 +608,7 @@ get_move(Stage, -Move, State, Stagegoal) :-
 get_stage(Stage, Newstage) :-
     Newstage is Stage + 1.
 % the cube should be finished after stage 28, so we stop here.
-stage([],2,_).
+stage([],4,_).
 % this builds the result move list by moving from stage to stage
 % and joining the solutions gathered for each stage
 stage(Movelist,Currentstage,Cubestate) :-
