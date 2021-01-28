@@ -597,6 +597,9 @@ stage([],12,_).
 % and joining the solutions gathered for each stage
 stage(Movelist,Currentstage,Cubestate) :-
     get_goal(Currentstage,Targetstate),
+    write("Stage = "),
+    write(Currentstage),
+    nl,
     rotate(Currentstage,Stagemoves,Cubestate,Targetstate),
     reverse(Stagemoves,Newmoves),
     move_sequence(Newmoves,Cubestate,Newstate),
