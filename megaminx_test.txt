@@ -17,6 +17,7 @@ rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,
 gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,
 dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau),Solution).
 
+        hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,
 Up slice rotated:
 cube(weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, weiss, rot, rot, dgruen, dgruen, dgruen, dgruen, dgruen, dgruen, dgruen, rot, dgruen, violett, violett, violett, violett, violett, violett, violett, dgruen, dgruen, dgruen, violett, rot, dblau, dblau, dblau, rot, rot, rot, rot, rot, rot, rot, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, hblau, braun, braun, braun, braun, braun, braun, braun, braun, braun, braun, braun, grau, grau, grau, grau, grau, grau, grau, grau, grau, grau, grau, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, hgruen, orange, orange, orange, orange, orange, orange, orange, orange, orange, orange, orange, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, rosa, gelb, gelb, gelb, violett, violett, violett, gelb, gelb, gelb, gelb, gelb, dblau, dblau, dblau, dblau, dblau, gelb, gelb, gelb, dblau, dblau, dblau)
 
