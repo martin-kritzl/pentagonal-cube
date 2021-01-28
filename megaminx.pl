@@ -343,182 +343,482 @@ move_sequence([Move|Othermoves], X, Z) :-
 % here are the cube goal states for each stage
 % ----------------------------------------------------------------------
 
-
+% White star
 get_goal(1, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
      _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,weiss, % Up / weiss
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,violett, % Left / violett
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(2, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
      weiss, _ , _ , _ , _ , _ , _ , _ , _ , _ ,weiss, % Up / weiss
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,violett, % Left / violett
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(3, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ , _ , _ , _ , _ , _ , _ ,weiss, % Up / weiss
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,violett, % Left / violett
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(4, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ , _ , _ , _ , _ ,weiss, % Up / weiss
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,violett, % Left / violett
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(5, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ , _ , _ ,weiss, % Up / weiss
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,violett, % Left / violett
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(6, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,violett, % Left / violett
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(7, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
-    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,violett, % Left / violett
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+    _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(8, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
-    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ ,violett , % Left / violett
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(9, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
-    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ ,gelb, _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / dunkel blau
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ ,violett, % Left / violett
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ ,gelb, _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(10, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
-    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ , _ , % Left / violett
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ ,gelb, _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ ,dblau, _ , _ , _ , _ ) % Back right up / dunkel blau
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ ,violett, % Left / violett
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ ,gelb, _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ ,dblau, _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
 
 get_goal(11, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
-    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front / dunkel gruen
-     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ , _ , % Left / violett
-     _ , _ ,rot, _ , _ , _ , _ , _ , _ , _ , _ , % Right / rot
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front left down / hell blau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Front right down / braun
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Down / grau
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back / hell gruen
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back left down / orange
-     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Back right down / rosa
-     _ , _ , _ , _ ,gelb, _ , _ , _ , _ , _ , _ , % Back left up / gelb
-     _ , _ , _ , _ , _ , _ ,dblau, _ , _ , _ , _ ) % Back right up / dunkel blau
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ ,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ ,violett, _ ,violett, % Left / violett
+     _ , _ ,rot, _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ ,gelb, _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ ,dblau, _ , _ , _ ,dblau) % Back right up / dunkel blau
     ).
+
+% White complete
+get_goal(12, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    weiss,weiss,weiss, _ ,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ ,dgruen,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ , _ ,violett,violett,violett, % Left / violett
+     _ , _ ,rot, _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ ,gelb, _ , _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ ,dblau, _ , _ , _ ,dblau) % Back right up / dunkel blau
+    ).
+
+get_goal(13, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    weiss,weiss,weiss,weiss,weiss, _ ,weiss, _ ,weiss, _ ,weiss, % Up / weiss
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ ,dgruen,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ ,violett,violett,violett,violett, % Left / violett
+     _ , _ ,rot, _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ , _ ,gelb,gelb, _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ ,dblau, _ , _ , _ ,dblau) % Back right up / dunkel blau
+    ).
+
+get_goal(14, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss, _ ,weiss, _ ,weiss, % Up / weiss
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ ,dgruen,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ ,violett,violett,violett,violett, % Left / violett
+     _ , _ ,rot, _ , _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ ,gelb,gelb,gelb, _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ , _ ,dblau,dblau, _ , _ ,dblau) % Back right up / dunkel blau
+    ).
+
+get_goal(15, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, _ ,weiss, % Up / weiss
+    dgruen, _ , _ , _ , _ , _ , _ , _ , _ ,dgruen,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ ,violett,violett,violett,violett, % Left / violett
+     _ , _ ,rot,rot, _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ ,gelb,gelb,gelb, _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ ,dblau,dblau,dblau, _ , _ ,dblau) % Back right up / dunkel blau
+    ).
+
+get_goal(16, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Up / weiss
+    dgruen,dgruen, _ , _ , _ , _ , _ , _ , _ ,dgruen,dgruen, % Front / dunkel gruen
+     _ , _ , _ , _ , _ , _ , _ ,violett,violett,violett,violett, % Left / violett
+     _ ,rot,rot,rot, _ , _ , _ , _ , _ , _ ,rot, % Right / rot
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front left down / hell blau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Front right down / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Down / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen, % Back / hell gruen
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Back left down / orange
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back right down / rosa
+     _ , _ , _ ,gelb,gelb,gelb, _ , _ , _ , _ ,gelb, % Back left up / gelb
+     _ , _ , _ , _ , _ ,dblau,dblau,dblau, _ , _ ,dblau) % Back right up / dunkel blau
+    ).
+
+% Turn cube upside-down
+get_goal(17, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front / hellblau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Right / orange
+     _ , _ , _ ,dgruen,dgruen,dgruen, _ , _ , _ , _ ,dgruen, % Front left down / dunkelgruen
+     _ , _ , _ , _ , _ ,violett,violett,violett, _ , _ ,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau, _ , _ , _ , _ , _ , _ , _ ,dblau,dblau, % Back / dunkelblau
+     _ , _ , _ , _ , _ , _ , _ ,rot,rot,rot,rot, % Back left down / rot
+     _ ,gelb,gelb,gelb, _ , _ , _ , _ , _ , _ ,gelb, % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back left up / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen) % Back right up / hellgruen
+    ).
+
+% edge pieces 2nd layer
+get_goal(18, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front / hellblau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Right / orange
+     _ , _ ,dgruen,dgruen,dgruen,dgruen, _ , _ , _ , _ ,dgruen, % Front left down / dunkelgruen
+     _ , _ , _ , _ , _ ,violett,violett,violett,violett, _ ,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau, _ , _ , _ , _ , _ , _ , _ ,dblau,dblau, % Back / dunkelblau
+     _ , _ , _ , _ , _ , _ , _ ,rot,rot,rot,rot, % Back left down / rot
+     _ ,gelb,gelb,gelb, _ , _ , _ , _ , _ , _ ,gelb, % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back left up / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen) % Back right up / hellgruen
+    ).
+
+get_goal(19, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front / hellblau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Right / orange
+     _ , _ ,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , _ ,dgruen, % Front left down / dunkelgruen
+     _ , _ , _ , _ , _ ,violett,violett,violett,violett, _ ,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau, _ , _ , _ , _ , _ , _ , _ ,dblau,dblau, % Back / dunkelblau
+     _ , _ , _ , _ , _ , _ ,rot,rot,rot,rot,rot, % Back left down / rot
+     _ ,gelb,gelb,gelb, _ , _ , _ , _ , _ , _ ,gelb, % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back left up / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen) % Back right up / hellgruen
+    ).
+
+get_goal(20, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front / hellblau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Right / orange
+     _ , _ ,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , _ ,dgruen, % Front left down / dunkelgruen
+     _ , _ , _ , _ , _ ,violett,violett,violett,violett, _ ,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau, _ , _ , _ , _ , _ , _ ,dblau,dblau,dblau, % Back / dunkelblau
+    rot, _ , _ , _ , _ , _ ,rot,rot,rot,rot,rot, % Back left down / rot
+     _ ,gelb,gelb,gelb, _ , _ , _ , _ , _ , _ ,gelb, % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back left up / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen) % Back right up / hellgruen
+    ).
+
+get_goal(21, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front / hellblau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Right / orange
+     _ , _ ,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , _ ,dgruen, % Front left down / dunkelgruen
+     _ , _ , _ , _ , _ ,violett,violett,violett,violett, _ ,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau, _ , _ , _ , _ , _ ,dblau,dblau,dblau, % Back / dunkelblau
+    rot, _ , _ , _ , _ , _ ,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb, _ , _ , _ , _ , _ , _ ,gelb, % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back left up / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen) % Back right up / hellgruen
+    ).
+
+get_goal(22, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hblau, % Front / hellblau
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,orange, % Right / orange
+     _ , _ ,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , _ ,dgruen, % Front left down / dunkelgruen
+     _ , _ , _ , _ ,violett,violett,violett,violett,violett, _ ,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau, _ , _ , _ , _ , _ ,dblau,dblau,dblau, % Back / dunkelblau
+    rot, _ , _ , _ , _ , _ ,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb, _ , _ , _ , _ , _ ,gelb, % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, % Back left up / rosa
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,hgruen) % Back right up / hellgruen
+    ).
+
+
+% corner pieces 2nd layer
+get_goal(23, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Up / grau
+     _ , _ , _ , _ , _ ,hblau, _ , _ , _ , _ , _ , % Front / hellblau
+     _ , _ , _ ,braun, _ , _ , _ , _ , _ , _ , _ , % Left / braun
+     _ , _ , _ , _ , _ , _ , _ ,orange, _ , _ , _ , % Right / orange
+     _ ,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , _ , % Front left down / dunkelgruen
+     _ , _ , _ ,violett,violett,violett,violett,violett,violett,violett, _ , % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau, _ , _ , _ ,dblau,dblau,dblau, _ , % Back / dunkelblau
+     rot,rot, _ , _ , _ ,rot,rot,rot,rot,rot, _ , % Back left down / rot
+     gelb,gelb,gelb,gelb,gelb,gelb, _ , _ , _ ,gelb, _ , % Back right down / gelb
+     _ , _ , _ , _ , _ , _ , _ , _ , _ ,rosa, _ , % Back left up / rosa
+     _ ,hgruen, _ , _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / hellgruen
+    ).
+
+% edge pieces 3rd layer
+get_goal(24, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , _ , % Up / grau
+     _ , _ , _ , _ ,hblau,hblau,hblau, _ , _ , _ , _ , % Front / hellblau
+     _ , _ ,braun,braun,braun, _ , _ , _ , _ , _ , _ , % Left / braun
+     _ , _ , _ , _ , _ , _ ,orange,orange,orange, _ , _ , % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, _ , _ , % Front left down / dunkelgruen
+    violett, _ ,violett,violett,violett,violett,violett,violett,violett,violett, _ , % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau, _ ,dblau,dblau,dblau,dblau, _ , % Back / dunkelblau
+    rot,rot,rot, _ ,rot,rot,rot,rot,rot,rot, _ , % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb, _ ,gelb,gelb, _ , % Back right down / gelb
+    rosa, _ , _ , _ , _ , _ , _ , _ ,rosa,rosa, _ , % Back left up / rosa
+    hgruen,hgruen,hgruen, _ , _ , _ , _ , _ , _ , _ , _ ) % Back right up / hellgruen
+    ).
+
+% corner pieces 3rd layer (Eckstück das nach vorn zeigt)
+get_goal(25, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ , _ ,hblau,hblau,hblau,hblau,hblau, _ , _ ,hblau, % Front / hellblau
+     _ ,braun,braun,braun,braun,braun, _ , _ , _ , _ ,braun, % Left / braun
+     _ , _ , _ , _ , _ ,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa, _ , _ , _ , _ , _ ,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen, _ , _ , _ , _ , _ ,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+% edge pieces 4th layer
+get_goal(26, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+     _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ,grau, % Up / grau
+     _ , _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau, _ ,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun, _ , _ , _ ,braun, % Left / braun
+    orange, _ , _ , _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ , _ , _ ,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ , _ , _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+% topstar in position
+get_goal(27, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, % Up / grau
+     _ , _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau, _ ,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun, _ , _ , _ ,braun, % Left / braun
+    orange, _ , _ , _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ , _ , _ ,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ , _ , _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+% topstar edge pieces
+get_goal(28, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, % Up / grau
+    hblau, _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau, _ ,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun, _ ,braun, _ ,braun, % Left / braun
+    orange, _ ,orange, _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ ,rosa, _ ,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ ,hgruen, _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+% corner pieces toplayer
+get_goal(29, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau,grau,grau,grau,grau,grau,grau,grau,grau,grau,grau, % Up / grau
+    hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun, % Left / braun
+    orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
 
 % --------------------------------------------------------------
 % the search space is narrowed by listing all allowed rotations
@@ -526,6 +826,8 @@ get_goal(11, cube(
 % --------------------------------------------------------------
 % eigentlich ist es cand (für candiadate), dann stimmt es auch mit dem pdf überein
 % TODO: define candidates for moves (adapt to megaminx)
+
+% White star
 cand(1, [f, r, l, u, rd, ld, v, t]).
 cand(2, [f, r, l, u, rd, ld, v, t]).
 cand(3, [f, r, l, u, rd, ld, v, t]).
@@ -537,6 +839,30 @@ cand(8, [f, r, l, u, rd, ld, v, t]).
 cand(9, [f, r, l, u, rd, ld, v, t]).
 cand(10, [f, r, l, u, rd, ld, v, t]).
 cand(11, [f, r, l, u, rd, ld, v, t]).
+% White complete
+cand(12, [f, r, l, u, t, v]).
+cand(13, [f, r, l, u, t, v]).
+cand(14, [f, r, l, u, t, v]).
+cand(15, [f, r, l, u, t, v]).
+cand(16, [f, r, l, u, t, v]).
+% Turn cube upside-down
+cand(17, [t]).
+% edge pieces 2nd layer
+cand(18, [f, r, l, u, t, v, sp1, sp2]).
+cand(19, [f, r, l, u, t, v, sp1, sp2]).
+cand(20, [f, r, l, u, t, v, sp1, sp2]).
+cand(21, [f, r, l, u, t, v, sp1, sp2]).
+cand(22, [f, r, l, u, t, v, sp1, sp2]).
+
+
+
+cand(23, [f, r, l, u, rd, ld, v]).
+cand(24, [f, r, l, u, rd, ld, v, sp3, sp4]).
+cand(25, [f, r, l, u, rd, ld, v]).
+cand(26, [f, r, l, u, rd, ld, v, sp1, sp2]).
+cand(27, [f, r, l, u, rd, ld, v, sp5, sp6]).
+cand(28, [f, r, l, u, rd, ld, v, sp7, sp8]).
+cand(29, [f, r, l, u, rd, ld, v, sp9, sp10, sp11]).
 
 
 % catch a candidate move from the list for each stage
@@ -583,7 +909,7 @@ get_move(Stage, -Move, State, Stagegoal) :-
 get_stage(Stage, Newstage) :-
     Newstage is Stage + 1.
 % the cube should be finished after stage 28, so we stop here.
-stage([],12,_).
+stage([],30,_).
 % this builds the result move list by moving from stage to stage
 % and joining the solutions gathered for each stage
 stage(Movelist,Currentstage,Cubestate) :-
@@ -593,6 +919,9 @@ stage(Movelist,Currentstage,Cubestate) :-
     nl,
     rotate(Currentstage,Stagemoves,Cubestate,Targetstate),
     reverse(Stagemoves,Newmoves),
+    write("Newmoves= "),
+    write(Newmoves),
+    nl,
     move_sequence(Newmoves,Cubestate,Newstate),
     get_stage(Currentstage,Newstage),
     stage(Newlist,Newstage,Newstate),
