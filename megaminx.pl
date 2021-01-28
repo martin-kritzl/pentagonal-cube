@@ -536,8 +536,8 @@ get_goal(11, cube(
 % --------------------------------------------------------------
 % eigentlich ist es cand (für candiadate), dann stimmt es auch mit dem pdf überein
 % TODO: define candidates for moves (adapt to megaminx)
-cand(1, [f, r, l, u, rd, ld, v]).
-cand(2, [f, r, l, u, rd, ld, v]).
+cand(1, [f, r, l, u, rd, ld, v, t]).
+cand(2, [f, r, l, u, rd, ld, v, t]).
 cand(3, [t]).
 cand(4, [f, r, l, u, rd, ld, v, sp1, sp2]).
 cand(5, [f, r, l, u, rd, ld, v]).
