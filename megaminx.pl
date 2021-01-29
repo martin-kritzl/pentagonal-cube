@@ -310,7 +310,14 @@ mov(sp10,X,Y) :-
 
 %Orient corners
 mov(sp11,X,Y) :-
-    move_sequence([-r, -rd, +r, +rd], X, Y).  
+    move_sequence([-r, -rd, +r, +rd], X, Y).
+
+%F2L for top layers
+mov(sp12,X,Y) :-
+    move_sequence([+u, +r, -u, -r, -u, -f, +u, +f], X, Y).
+
+mov(sp13,X,Y) :-
+    move_sequence([-u, -l, +u, +l, +u, +f, -u, -f], X, Y).
 
 % --------------------------------------------------------------
 % these helpers call the actual rotations
@@ -802,8 +809,73 @@ get_goal(28, cube(
     hgruen,hgruen,hgruen,hgruen,hgruen, _ ,hgruen, _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
     ).
 
-% corner pieces toplayer
 get_goal(29, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau,grau,grau, _ ,grau, _ ,grau, _ ,grau, _ ,grau, % Up / grau
+    hblau, _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun, _ ,braun,braun,braun, % Left / braun
+    orange, _ ,orange, _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ ,rosa, _ ,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ ,hgruen, _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+get_goal(30, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau,grau,grau,grau,grau, _ ,grau, _ ,grau, _ ,grau, % Up / grau
+    hblau, _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun, % Left / braun
+    orange, _ ,orange, _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa, _ ,rosa,rosa,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ ,hgruen, _ ,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+get_goal(31, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau,grau,grau,grau,grau,grau,grau, _ ,grau, _ ,grau, % Up / grau
+    hblau, _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun, % Left / braun
+    orange, _ ,orange, _ ,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen, _ ,hgruen,hgruen,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+get_goal(32, cube(
+    %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
+    grau,grau,grau,grau,grau,grau,grau,grau,grau, _ ,grau, % Up / grau
+    hblau, _ ,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau, % Front / hellblau
+    braun,braun,braun,braun,braun,braun,braun,braun,braun,braun,braun, % Left / braun
+    orange, _ ,orange,orange,orange,orange,orange,orange,orange,orange,orange, % Right / orange
+    dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen, % Front left down / dunkelgruen
+    violett,violett,violett,violett,violett,violett,violett,violett,violett,violett,violett, % Front right down / violett
+    weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss, % Down / weiss
+    dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau,dblau, % Back / dunkelblau
+    rot,rot,rot,rot,rot,rot,rot,rot,rot,rot,rot, % Back left down / rot
+    gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb,gelb, % Back right down / gelb
+    rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa,rosa, % Back left up / rosa
+    hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen,hgruen) % Back right up / hellgruen
+    ).
+
+
+% corner pieces toplayer
+get_goal(33, cube(
     %1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11
     grau,grau,grau,grau,grau,grau,grau,grau,grau,grau,grau, % Up / grau
     hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau,hblau, % Front / hellblau
@@ -848,21 +920,25 @@ cand(16, [f, r, l, u, t, v]).
 % Turn cube upside-down
 cand(17, [t]).
 % edge pieces 2nd layer
-cand(18, [f, r, l, u, t, v, sp1, sp2]).
-cand(19, [f, r, l, u, t, v, sp1, sp2]).
-cand(20, [f, r, l, u, t, v, sp1, sp2]).
-cand(21, [f, r, l, u, t, v, sp1, sp2]).
-cand(22, [f, r, l, u, t, v, sp1, sp2]).
+cand(18, [sp1, sp2, v, f, r, l, u, t]).
+cand(19, [sp1, sp2, v, f, r, l, u, t]).
+cand(20, [sp1, sp2, v, f, r, l, u, t]).
+cand(21, [sp1, sp2, v, f, r, l, u, t]).
+cand(22, [sp1, sp2, v, f, r, l, u, t]).
 
 
 
-cand(23, [f, r, l, u, rd, ld, v]).
-cand(24, [f, r, l, u, rd, ld, v, sp3, sp4]).
-cand(25, [f, r, l, u, rd, ld, v]).
-cand(26, [f, r, l, u, rd, ld, v, sp1, sp2]).
-cand(27, [f, r, l, u, rd, ld, v, sp5, sp6]).
-cand(28, [f, r, l, u, rd, ld, v, sp7, sp8]).
-cand(29, [f, r, l, u, rd, ld, v, sp9, sp10, sp11]).
+cand(23, [v, f, r, l, u, rd, ld]).
+cand(24, [v, u, sp3, sp4]).
+cand(25, [v, f, r, l, u]).
+cand(26, [v, u, sp12, sp13]).
+cand(27, [v, u, sp5, sp6]).
+cand(28, [v, u, sp7, sp8]).
+cand(29, [v, u, sp9, sp10, sp11]).
+cand(30, [v, u, sp9, sp10, sp11]).
+cand(31, [v, u, sp9, sp10, sp11]).
+cand(32, [v, u, sp9, sp10, sp11]).
+cand(33, [v, u, sp9, sp10, sp11]).
 
 
 % catch a candidate move from the list for each stage
@@ -909,7 +985,7 @@ get_move(Stage, -Move, State, Stagegoal) :-
 get_stage(Stage, Newstage) :-
     Newstage is Stage + 1.
 % the cube should be finished after stage 28, so we stop here.
-stage([],30,_).
+stage([],34,_).
 % this builds the result move list by moving from stage to stage
 % and joining the solutions gathered for each stage
 stage(Movelist,Currentstage,Cubestate) :-
