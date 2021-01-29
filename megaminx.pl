@@ -926,8 +926,6 @@ cand(20, [sp1, sp2, v, f, r, l, u, t]).
 cand(21, [sp1, sp2, v, f, r, l, u, t]).
 cand(22, [sp1, sp2, v, f, r, l, u, t]).
 
-
-
 cand(23, [v, f, r, l, u, rd, ld]).
 cand(24, [v, u, sp3, sp4]).
 cand(25, [v, f, r, l, u]).
@@ -939,7 +937,6 @@ cand(30, [v, u, sp9, sp10, sp11]).
 cand(31, [v, u, sp9, sp10, sp11]).
 cand(32, [v, u, sp9, sp10, sp11]).
 cand(33, [v, u, sp9, sp10, sp11]).
-
 
 % catch a candidate move from the list for each stage
 get_candidate(Stage, Move) :-
