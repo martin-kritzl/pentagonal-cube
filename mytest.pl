@@ -11,13 +11,13 @@ statistics(walltime, [TimeSinceStart | [TimeSinceLastCall]]),
     write("--------------------------Megaminx wird verdreht-------------------------------------"),
     nl,
     write("--------------------------Rotation-------------------------------------"),
-    write("[+f, -r, -v, +l, -ld, +rd, +f, +f, -l, +ld, -rd, +l, -r, +v, -ld, +v, +rd, -l, +f, -r, -v, +l, -ld]"),
+    %write("[+f, -r, -v, +l, -ld, +rd, +f, +f, -l, +ld, -rd, +l, -r, +v, -ld, +v, +rd, -l, +f, -r, -v, +l, -ld]"),
     nl,
 
 %[-r, -v, +l, -ld, +rd, +f, +f, -l, +ld, -rd, +l, -r, +v, -ld, +v, +rd, -l, +f, -r, -v, +l, -ld, +f, -l, +ld, -rd, +l],
 
     move_sequence(
-      [-r, -v, +l, -ld, +rd, -r, +v, -ld, +f, -r, -v, +l, -ld, +f, +r],
+      [-r, -v, +l, +f, -u, +ld, -rd, +r],
     cube(
         weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,weiss,
         dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,dgruen,
